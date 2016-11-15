@@ -24,7 +24,7 @@ db-server:
 cli-deps:
   pkg.installed:
     - pkgs:
-      {% for cli-dep in map.cli_dep.items(): %}
+      {% for cli-dep in map.cli_dep %}
       - {{ cli-dep }}
       {% endfor %}
 {% endif  %}
