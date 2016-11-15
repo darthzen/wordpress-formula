@@ -27,6 +27,17 @@ wordpressdbuser:
     - require:
       - wordpressdb
 
+# Grant db permissions to user
+wordpressdbgrant:
+  mysql_grants.present:
+    - grant: all privileges
+    - database: {{ site.database }}
+    - user: {{ site.dbuser }}
+    - host: localhost
+    - require:
+      - wordpressdb
+      - wordpressdbuser
+
 # This command tells wp-cli to download wordpress
 download_wordpress_{{ id }}:
  cmd.run:
