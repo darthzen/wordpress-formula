@@ -23,6 +23,6 @@
         'web_service': 'apache2',
         'db_service': 'mysql',
         'web_php': 'apache2-mod_php5',
-        'cli_dep': ('php5-phar','php5-openssl','php5-zlib'),
+        'php_dep': ('php5-phar','php5-openssl','php5-zlib','php5-mysql','php5-curl','php5-calendar','php5-dom','php5-posix','php5-gd','php5-iconv','php5-json','php5-xmlwriter','php5-xmlreader','php5-ftp','php5-intl','php5-bz2','php5-memcache','php5-zip'),
     },
 }, merge=salt['pillar.get']('wordpress:lookup')) %}
