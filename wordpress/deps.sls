@@ -1,3 +1,5 @@
+{% from "wordpress/map.jinja" import map with context %}
+
 # Verifying package dependencies and services. I do not know package names
 # for non-SUSE, so the conditional is to prevent breakage with other distros.
 # This shoud be templated across all distros
