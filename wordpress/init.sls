@@ -16,14 +16,14 @@ include:
 # Make sure the database exists
 wordpressdb:
   mysql_database.present:
-    - name: {{ database }}
+    - name: {{ site.database }}
 
 # Make sure the database user exists
 wordpressdbuser:
   mysql_user.present:
-    - name: {{ dbuser }}
-    - password: {{ dbpass }}
-    - host: {{ dbhost }}
+    - name: {{ site.dbuser }}
+    - password: {{ site.dbpass }}
+    - host: {{ site.dbhost }}
     - require:
       - wordpressdb
 
