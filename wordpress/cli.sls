@@ -23,8 +23,10 @@ db-server:
 
 cli-deps:
   pkg.installed:
-    - name: {{ map.cli_dep }}
-
+    - pkgs:
+      {% for cli-dep in map.cli_dep %}
+      - {{ cli-dep }}
+      {% endfor %}
 {% endif  %}
 
 # This downloads and installs WP-Cli
