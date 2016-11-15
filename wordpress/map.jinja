@@ -18,5 +18,11 @@
         'docroot': '/srv/www/htdocs',
         'www_group': 'www',
         'www_user': 'wwwrun',
+        'web_server': 'apache2',
+        'database': 'mariadb',
+        'web_service': 'apache2',
+        'db_service': 'mysql',
+        'web_php': 'apache2-mod_php5',
+        'cli_dep': 'php5-phar',
     },
 }, merge=salt['pillar.get']('wordpress:lookup')) %}
