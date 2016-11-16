@@ -13,6 +13,8 @@ wordpress:
             url: http://siteA.com
             title: 'siteA title'
             email: siteA@email.com
+            connection_user: dbadminuser
+            connection_pass: dbadminpass
         sitenameB.com:
             username: siteBuser
             password: siteBpass
@@ -23,5 +25,7 @@ wordpress:
             url: http://siteB.com
             title: 'siteB title'
             email: siteB@email.com
+            connection_user: dbadminuser
+            connection_pass: dbadminpass
     lookup:
         docroot: /var/html           

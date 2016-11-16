@@ -2,7 +2,7 @@
 wordpress-formula
 =================
 
-A saltstack formula to install and configure WordPress on Debian, Ubuntu, and RHEL.
+A saltstack formula to install and configure WordPress on SUSE, Debian, Ubuntu, and RHEL.
 
 .. note::
 
