@@ -34,6 +34,8 @@ wordpressdbgrant:
     - database: {{ site.database }}
     - user: {{ site.dbuser }}
     - host: localhost
+    - connection_user: {{ site.connection_user }}
+    - connection_pass: {{ site.connection_pass  }}
     - require:
       - wordpressdb
       - wordpressdbuser
