@@ -19,6 +19,7 @@ wordpressdb:
     - name: {{ site.database }}
     - connection_user: {{ site.connection_user }}
     - connection_pass: {{ site.connection_pass  }}
+    - connection_host: {{ site.connection_host }}
 
 # Make sure the database user exists
 wordpressdbuser:
@@ -28,6 +29,7 @@ wordpressdbuser:
     - host: {{ site.dbhost }}
     - connection_user: {{ site.connection_user }}
     - connection_pass: {{ site.connection_pass  }}
+    - connection_host: {{ site.connection_host }}
     - require:
       - wordpressdb
 
@@ -40,6 +42,7 @@ wordpressdbgrant:
     - host: localhost
     - connection_user: {{ site.connection_user }}
     - connection_pass: {{ site.connection_pass  }}
+    - connection_host: {{ site.connection_host }}
     - require:
       - wordpressdb
       - wordpressdbuser
