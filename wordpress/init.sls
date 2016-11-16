@@ -17,6 +17,8 @@ include:
 wordpressdb:
   mysql_database.present:
     - name: {{ site.database }}
+    - connection_user: {{ site.connection_user }}
+    - connection_pass: {{ site.connection_pass  }}
 
 # Make sure the database user exists
 wordpressdbuser:
@@ -24,6 +26,8 @@ wordpressdbuser:
     - name: {{ site.dbuser }}
     - password: {{ site.dbpass }}
     - host: {{ site.dbhost }}
+    - connection_user: {{ site.connection_user }}
+    - connection_pass: {{ site.connection_pass  }}
     - require:
       - wordpressdb
 
