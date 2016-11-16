@@ -49,7 +49,7 @@ download_wordpress_{{ id }}:
 # This command tells wp-cli to create our wp-config.php, DB info needs to be the same as above
 configure_{{ id }}:
  cmd.run:
-  - name: "/usr/local/bin/wp core config --dbname=\"{{ site.database }}\" --dbuser=\"{{ site.dbuser }}\" --dbpass=\"{{ site.dbpass }}\" --dbhost=\"{{ site.dbhost }}\" --path=\"{{ map.docroot }}/{{ id }}\""
+  - name: '/usr/local/bin/wp core config --dbname="{{ site.database }}" --dbuser="{{ site.dbuser }}" --dbpass="{{ site.dbpass }}" --dbhost="{{ site.dbhost }}" --path="{{ map.docroot }}/{{ id }}"'
   - cwd: {{ map.docroot }}/{{ id }}
   - user: {{ map.www_user }}
   - unless: test -f {{ map.docroot }}/{{ id }}/wp-config.php  
@@ -58,7 +58,7 @@ configure_{{ id }}:
 install_{{ id }}:
  cmd.run:
   - cwd: {{ map.docroot }}/{{ id }}
-  - name: "/usr/local/bin/wp core install --url=\"{{ site.url }}\" --title=\"{{ site.title }}\" --admin_user=\"{{ site.username }}\" --admin_password=\"{{ site.password }}\" --admin_email=\"{{ site.email }}\" --path=\"{{ map.docroot }}/{{ id }}/\""
+  - name: '/usr/local/bin/wp core install --url="{{ site.url }}" --title="{{ site.title }}" --admin_user="{{ site.username }}" --admin_password="{{ site.password }}" --admin_email="{{ site.email }}" --path="{{ map.docroot }}/{{ id }}/"'
   - user: {{ map.www_user }}
   - unless: /usr/local/bin/wp core is-installed --path="{{ map.docroot }}/{{ id }}"
 {% endfor %}
